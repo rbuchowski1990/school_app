@@ -1,4 +1,4 @@
--#= link_to t('shared.add_new_item'), new_student_path, class: 'btn btn-default'
+= link_to t('shared.add_new_item'), new_student_path, class: 'btn btn-default'
 %table.table.table-condensed
   %thead
     %tr
@@ -6,4 +6,4 @@
       %th= t('student.columns.last_name')
       %th= t('shared.actions')
   %tbody
-    -#= render students
+    = render students
