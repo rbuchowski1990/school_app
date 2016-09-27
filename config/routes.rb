@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     get :subjects
   end
 
+  resources :teachers
+
   root 'students#index'
 end
