@@ -5,9 +5,12 @@
     %tr
       %th= t('subject.title')
       %th= t('subjects.columns.avg_notes')
+      %th= "Notes"
   %tbody
     - student_subject_items.each do |subject_item|
       %tr
         %td= subject_item.title
         %td= student.decorate.avg_notes(subject_item)
+        %td
+        %td= render 'new_subject_item_note', :subject_item => subject_item.id
 = link_to t('shared.back'), students_path, class: 'btn btn-default'

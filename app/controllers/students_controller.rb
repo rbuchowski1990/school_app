@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   expose(:students)
   expose(:student, attributes: :student_params)
   expose(:student_subject_items) { student.subject_items }
+  expose(:subject_item_note, attributes: :subject_item_params)
 
   def index
   end
@@ -10,6 +11,15 @@ class StudentsController < ApplicationController
   end
 
   def show
+  end
+
+  def create_new_subject_item_note
+    if subject_item_note.save
+      # binding.pry
+      redirect_to student_subjects_path(params[:subject_item_note][:student_id]), notice: I18n.t('shared.created', resource: 'subject_item_note')
+    else
+      render :new
+    end
   end
 
   def create
@@ -38,4 +48,9 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:first_name, :last_name, subject_item_ids: [])
   end
+
+  def subject_item_params
+    params.require(:subject_item_note).permit(:student_id, :subject_item_id, :value)
+  end
+
 end
