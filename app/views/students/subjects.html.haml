@@ -1,5 +1,5 @@
 - breadcrumb :student_subjects, student
-= student.decorate.full_name
+%h1= student.decorate.full_name
 %table.table.table-condensed
   %thead
     %tr
@@ -11,6 +11,6 @@
       %tr
         %td= subject_item.title
         %td= student.decorate.avg_notes(subject_item)
-        %td
+        %td= student.decorate.all_notes(subject_item)
         %td= render 'new_subject_item_note', :subject_item => subject_item.id
 = link_to t('shared.back'), students_path, class: 'btn btn-default'
