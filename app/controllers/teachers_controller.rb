@@ -17,6 +17,7 @@ class TeachersController < ApplicationController
 
   def update
     if teacher.save
+      session[:pluto] = 'History of NY (Pies Pluto)'
       redirect_to teacher_path(teacher), notice: I18n.t('shared.updated', resource: 'Teacher')
     else
       render :edit
