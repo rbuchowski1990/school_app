@@ -1,10 +1,11 @@
 before_script:
- - psql -c 'create database schoolapp_test;' -U postgres
-
+- psql -c 'create database schoolapp_test;' -U postgres
+- rvm --default use 2.2.3
 language: ruby
 rvm:
- - 2.2.3
- - jruby
- - rbx-2
-# uncomment and edit the following line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+- 2.2.3
+- jruby
+- rbx-2
+deploy:
+  api_key:
+    secure: o0L3kFW1nDRB/W46bgXGrHJX0g/VXkC+m9M8LLykqiVHkZDYQJdgtM/4fasEyRLZ5AsgjQI+mxSYG+QaXWTB6YDmQtOQ7vHZaPtdiV3+ECaINXgjmu1WcKlBFrFAEa5m+2T9XsNJGODjX5nVhabFL7nvcLBA+z66KQFsHxM5iQWZA5m/RgEKmOFkTKVX20J3AyWgWc3nrDFtnt8uz5ywmOb1dRiBtzHnohjtW9JC7nRj+EHaM38/N2yp3IBFyThCQFhdphOGVAhHg6wkKAa07fzrI2FDv3n0qxbvt55QqiSTytfMXAAcKKLf9jx5kZl0/dxFq5PNlsq6DnP8HFPifzQZHqxXXXObH8UgxuAnlK1Gtb/fTn7tmh8VZWjO8bjKs9wqXWZ9fSeZ/w/ReXVqQ8xnqXtHwc87khV5FKlS5sJQWMFEM1ll/dc7koKqZziYn7P1zBirn9fcXGsNakMHz1cJXg6i9uMFGBGUzqX4IucxPlPFgRFQEkBZCgiiZ0nxv1WnKpMJ5FjppslqNXOkzmuUZ7Ywkf9s/3jT7rmop0ttggTSdiyqkjLtOU0L3EmQ9WaxAb9pGGpTEFY71YEN8FYyMC9pLiI3O5VCiNy7f+Z/vOR+wnJvPfSxyc9Vror717rqp9KR03drLZpkYRDasT1om9MCTdgtsPLAVPviWF4=
