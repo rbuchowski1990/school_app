@@ -1,6 +1,18 @@
 - breadcrumb :subjects
-.subjects
-  list of subjects:
-  - subject_items.each do |subject_item|
-    .subject-item
-      = subject_item.title
+
+%table.table.table-condensed
+  %thead
+    %tr
+      %th= "list of subjects:"
+      %th= "Students:"
+  %tbody
+    - subject_items.each do |subject_item|
+      %tr
+        %td= subject_item.title
+        %td= subject_item.decorate.subject_students
+-#.subjects
+-#
+-#  list of subjects:
+-#  - subject_items.each do |subject_item|
+-#    .subject-item
+-#      = subject_item.title
