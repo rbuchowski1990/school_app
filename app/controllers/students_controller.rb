@@ -4,21 +4,20 @@ class StudentsController < ApplicationController
   expose(:student_subject_items) { student.subject_items }
   expose(:subject_item_note, attributes: :subject_item_params)
 
-  def index
-  end
-
-  def new
-  end
-
-  def show
-  end
+  # def index
+  # end
+  #
+  # def new
+  # end
+  #
+  # def show
+  # end
 
   def create_new_subject_item_note
     if subject_item_note.save
-      # binding.pry
       redirect_to student_subjects_path(params[:subject_item_note][:student_id]), notice: I18n.t('shared.created', resource: 'subject_item_note')
     else
-      render :new
+      redirect_to student_subjects_path(params[:subject_item_note][:student_id]), :flash => { :error => subject_item_note.errors.full_messages.join(', ') }
     end
   end
 
