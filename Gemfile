@@ -27,6 +27,7 @@ group :development do
   gem 'rails_layout'
   gem 'spring-commands-rspec'
   gem 'quiet_assets'
+  gem 'faker'
 end
 
 group :development, :test do
