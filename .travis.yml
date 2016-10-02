@@ -1,6 +1,8 @@
 before_script:
 - psql -c 'create database schoolapp_test;' -U postgres
 - rvm --default use 2.2.3
+- bundle exec rake db:migrate
+- bundle exec rake db:seed
 language: ruby
 rvm:
 - 2.2.3
