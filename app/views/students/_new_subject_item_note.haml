@@ -1,5 +1,5 @@
 = simple_form_for subject_item_note do |f|
   = f.hidden_field :student_id, :value => student.id
   = f.hidden_field :subject_item_id, :value => subject_item
-  = f.input :value, collection: 1..5, selected: 1
-  = f.button :submit
+  = f.input :value,label: false, collection: 1..5, selected: 1
+  = f.button :submit, 'Add note'

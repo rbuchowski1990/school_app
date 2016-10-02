@@ -12,8 +12,6 @@ Rails.application.routes.draw do
 
   get :visitors, to: 'visitors#index'
 
-  get :subject_item_notes, to: 'students#new_subjet_item_note'
-
   post :subject_item_notes, to: 'students#create_new_subject_item_note'
 
 

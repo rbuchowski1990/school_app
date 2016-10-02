@@ -13,6 +13,10 @@ class StudentsController < ApplicationController
   # def show
   # end
 
+  # def subject_item_note
+  #   binding.pry
+  # end
+
   def create_new_subject_item_note
     if subject_item_note.save
       redirect_to student_subjects_path(params[:subject_item_note][:student_id]), notice: I18n.t('shared.created', resource: 'subject_item_note')
